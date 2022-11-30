@@ -1,0 +1,51 @@
+/*This is an external css page styling KomoravoluDiv.html.*/
+body {	
+/*This styles the body of the page.*/
+		background-image: url('Background.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 100% 100%;
+		text-align:center;
+		}
+
+/*This styles the main div.*/
+	#mainbox{
+			Background-color: white;
+			Padding: 30px;
+			Border: 5px solid black;
+			Margin: 100px 100px;
+			}
+
+/*This styles the internal divs.*/			
+	.boxes {
+			Background-color: lime;
+			Padding: 15px;
+			Border: 2px solid blue;
+			Margin: 30px 10px;
+			}
+			
+/*The following defines the horizontal list used in the navigation menu.*/
+	ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 110px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: violet;
+}
