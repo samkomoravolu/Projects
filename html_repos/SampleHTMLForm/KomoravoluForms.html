@@ -1,0 +1,61 @@
+<!--KomoravoluForms-->
+<!--Sameer Komoravolu-->
+<!--1/28/2020-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UNSDG #3 Forms</title>
+	<style>
+	body{text-align:center; background-color:lime;}
+	
+	#TextDiv1 { 
+		Border-radius: 30px;
+		Height:100px;
+		Margin-left:400px;
+		Margin-right:400px;
+		Background-color:#C9F5C1 ;
+		Border:2px solid black;
+		Text-align:center;
+		Padding-right:30px;
+		}
+	
+	</style>
+</head>
+<body>
+	<h1>How healthy are you?</h1>
+	<h3>by: Sameer Komoravolu</h3>
+	<!--This is where the form starts containing the questions.-->
+	<form action="KomoravoluSubmit.html">
+		<fieldset>
+			<legend>Survey Questions:</legend>
+			<!--The age, height and weight characteristics are fields where 
+			only numbers are valid. Age is required.-->
+			Age: <input type="number" name="age" required>Years<br><br>
+			Height: <input type="number" name="height"> Inches<br><br>
+			Weight: <input type="number" name="weight"> lbs.<br><br>
+			<h3>Days Spent Excersizing</h3>
+			<!--This is a section with multiple choices to describe the number
+			of days a week in excersize.-->
+			<input type="radio" name="DayEx" value="0-1"> 0-1<br>
+			<input type="radio" name="DayEx" value="2-4"> 2-4<br>
+			<input type="radio" name="DayEx" value="5-7"> 5-7<br>
+			<h3>Time Spent Excersizing</h3>
+			<!--Similar to the days spent excersizing, this is a dropdown menu
+			specifying the number of minutes a day in excersize.-->
+			<select name="TimEx">
+				<option value="0-30 mins">0-30 mins</option>
+				<option value="30-60 mins">30-60 mins</option>
+				<option value="60-120 mins">60-120 mins</option>
+				<option value="120-180 mins">120-180 mins</option>
+				<option value="180+ mins">180+ mins</option>
+			</select><br><br>
+			<p>How much sleep do you get on an average day? How many hours do 
+			you spend on a screen a week?</p>
+			<!--This is used to create a long text area.-->
+			<textarea rows="4" cols="75"></textarea>
+		</fieldset><br>
+		<input type="submit" value="submit">
+	<input type="reset">
+	</form>	
+</body>
+</html>
