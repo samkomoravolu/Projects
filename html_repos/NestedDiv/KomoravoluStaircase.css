@@ -1,0 +1,20 @@
+/*KomoravoluStaircaseStylesheet*/
+/*Sameer Komoravolu*/
+/*2/4/2020*/
+
+/*This makes the background-color lime.*/
+body{background-color:lime;}
+
+/*This makes the divs have a padding of 20px top/bottom, have a 
+background-color of white and start at 50% of the screen. It hass a blue
+border.*/
+.stair{
+	margin-left:50%;
+	display:inline-block;
+	background-color:white;
+	text-align:center;
+	border:solid blue;
+	padding-top:20px;
+	padding-bottom:20px;
+	}
+
