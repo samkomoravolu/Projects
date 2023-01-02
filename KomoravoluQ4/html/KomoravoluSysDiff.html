@@ -1,0 +1,80 @@
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<style>
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+			
+			
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu">
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html" class="active">Systems of ODE's</a>
+		</div>
+		<div class="headings">
+			<img src="der.png" alt="absolute" id="left">
+			<img src="der.png" alt="absolute" id="right">
+			<h1>
+			Solve The First Order Differential Equation
+			</h1>
+		</div>
+		<div class="input">
+			
+			<form action="/cgi-bin/SysDiff.py" target="res-iframe" method="post">
+				<label><i>x' = </i></label>
+				<input type="text" name="xval1" class="numberInput">
+				<label><i>x + </i></label>
+				<input type="text" name="xval2" class="numberInput">
+				<label><i>y + </i></label>
+				<input type="text" name="xval3" class="numberInput">
+				<label><i>z</i></label>
+				<br><br>
+				
+				<label><i>y' = </i></label>
+				<input type="text" name="yval1" class="numberInput">
+				<label><i>x + </i></label>
+				<input type="text" name="yval2" class="numberInput">
+				<label><i>y + </i></label>
+				<input type="text" name="yval3" class="numberInput">
+				<label><i>z</i></label>
+				<br>
+				
+				<label><i>z' = </i></label>
+				<input type="text" name="zval1" class="numberInput">
+				<label><i>x + </i></label>
+				<input type="text" name="zval2" class="numberInput">
+				<label><i>y + </i></label>
+				<input type="text" name="zval3" class="numberInput">
+				<label><i>z</i></label>
+				
+
+			  <button type="submit" class="submit">Go</button>
+			</form>		
+		</div>
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/SysDiff.py"></iframe>
+	</body>
+</html>
+	

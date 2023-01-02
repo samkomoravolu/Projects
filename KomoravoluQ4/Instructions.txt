@@ -1,0 +1,8 @@
+Instructions:
+
+For this calculator to work, you will need to download the Sympy standard library. To go to the home page, select index.html. On your shell, run the command python3 -m http.server --cgi 8000. This command creates a small server that runs on your computer. The polynomials page needs 1 or 2 arguments: the function (and the substitute value.) The matrix page needs matrix elements, the size (rows x columns {no space}), and the mode (det, eigen, rref). The eq page requires 2 equations, both set to 0. The trig page requires the function and the mode (exp, simp) to expand or simplify the expression. The diff page needs the function, the variable to differentiate, and the value for slope (optional). The int page needs the function, the variable to integrate, and the lower and upper bounds (optional). The differential equations page requires values (or functions) as coefficients.
+
+Help: Krishna Komoravolu helped me understand the concept of i-frames. W3Schools helped me review html and python aspects.
+
+LINK TO DOWNLOAD SYMPY:
+https://www.sympy.org/en/index.html

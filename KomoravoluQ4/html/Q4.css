@@ -1,0 +1,103 @@
+/*KomoravoluQ4.css*/
+/*Sameer Komoravolu*/
+/*5.8.2020*/
+
+.vertical-menu {
+  width: 250px; /* Set a width if you like */
+  position: fixed;
+  border: 2px solid red;
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #FF0000; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
+/* Sets the background for the body. */
+body {
+	background-image: url('graph.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+	
+/*Styles all of the headings.*/
+.headings {
+	margin-left: 300px;
+	margin-Right: 300px;
+	margin-top: 25px;
+	border: 2px solid red;
+	text-align: center;
+	background-color: #eee;
+	border-radius: 10px;
+}
+
+/*Styles most of the input boxes.*/
+.input {
+  width: 60%;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #eee;
+  background-image: url('calculator.png');
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  padding: 12px 20px 12px 40px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 25px;
+}
+
+/*Styles most of the submit buttons.*/
+.submit{
+  background-color: #eee;
+  border: 2px solid red;
+  padding: 6px 6px;
+  text-decoration: none;
+  margin-left: 300px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/*Sets the color when hovering over the submit.*/
+.submit:hover{
+	background-color: #ccc;
+}
+
+/*Styles the input boxes in the differential equations page.*/
+.numberInput{
+	width: 80px;
+	border: 2px solid red;
+	border-radius: 10px;
+	text-align: center;
+			}
+
+/*Lets headers use left-floating images.*/
+#left {
+	float: left;
+	width: 80px;
+	height: 80px;
+}
+
+/*Lets headers use right-floating images.*/
+#right {
+	float: right;
+	width: 80px;
+	height: 80px;
+}
+

@@ -1,0 +1,1046 @@
+Instructions:
+
+For this calculator to work, you will need to download the Sympy standard library. To go to the home page, select index.html. On the project file, run the batch file. This command creates a small server that runs on your computer. The polynomials page needs 1 or 2 arguments: the function (and the substitute value.) The matrix page needs matrix elements, the size (rows x columns {no space}), and the mode (det, eigen, rref). The eq page requires 2 equations, both set to 0. The trig page requires the function and the mode (exp, simp) to expand or simplify the expression. The diff page needs the function, the variable to differentiate, and the value for slope (optional). The int page needs the function, the variable to integrate, and the lower and upper bounds (optional). The differential equations page requires values (or functions) as coefficients.
+
+Help: Krishna Komoravolu helped me understand the concept of i-frames. W3Schools helped me review html and python aspects.
+
+LINK TO DOWNLOAD SYMPY:
+https://www.sympy.org/en/index.html
+
+INDEX HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="html/DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="html/Q4.css">
+		<!--Styles the instructions.-->
+		<style>
+			#frame{
+				margin-left: 300px;
+				margin-top: 20px;
+				border: 2px solid red;
+				border-radius: 10px;
+				background-color: #eee;
+				width: 60%;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!--This is the vertical menu, styled in the style sheet.-->
+		<div class="vertical-menu">
+			<a href="index.html" class="active">Home</a>
+			<a href="html/KomoravoluPoly.html">Polynomials</a>
+			<a href="html/KomoravoluMatrix.html">Matrices</a>
+			<a href="html/KomoravoluEq.html">Systems of Equations</a>
+			<a href="html/KomoravoluTrig.html">Trigonometry</a>
+			<a href="html/KomoravoluDiff.html">Differential Calculus</a>
+			<a href="html/KomoravoluInt.html">Integral Calculus</a>
+			<a href="html/KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div id="frame"><!--Instructions:-->
+		<p><i>Instructions:<br>
+
+		For this calculator to work, you will need to download the Sympy standard library. To go to the home page, select index.html.
+		On your shell, run the command python3 -m http.server --cgi 8000. This command creates a small server that runs on your computer. 
+		The polynomials page needs 1 or 2 arguments: the function (and the substitute value.) The matrix page needs matrix elements, the 
+		size (rows x columns {no space}), and the mode (det, eigen, rref). The eq page requires 2 equations, both set to 0. The trig page
+		requires the function and the mode (exp, simp) to expand or simplify the expression. The diff page needs the function, the variable
+		to differentiate, and the value for slope (optional). The int page needs the function, the variable to integrate, and the lower and
+		upper bounds (optional). The differential equations page requires values (or functions) as coefficients.<br><br>
+
+		Help:<br> Krishna Komoravolu helped me understand the concept of i-frames. W3Schools helped me review html and python aspects.</i></p>
+		</div>
+	</body>
+</html>
+	
+POLY HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+	<!--Styles the i-frame.-->
+		<style>
+			#frame{
+				margin-left: 300px;
+				margin-top: 20px;
+				border: 2px solid red;
+				border-radius: 10px;
+				background-color: #eee;
+				width: 60%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html" class="active">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<!--Creates the heading.-->
+		<div class="headings">
+			<img src="abs.gif" alt="absolute" id="left">
+			<img src="abs.gif" alt="absolute" id="right">
+			<h1>
+			Solve The Polynomial
+			</h1>
+		</div>
+		<form action="/cgi-bin/poly.py" target="res-iframe" method="post">		
+		<!--form action="/cgi-bin/poly.py"  method="post"-->
+			<input type="text" id="userinput" name="userinput" placeholder="Find Values:" class="input">
+			<input type="submit" class="submit" value="Submit">
+			<!--input type="submit" class="submit" id="margin" value="Find a Value"-->
+		</form>
+		
+		<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/poly.py"></iframe>
+	
+				
+		<!--iframe height="200" width="400" marginwidth="50" id="frame"
+		name="res-iframe" src="/cgi-bin/poly.py">
+		</iframe-->
+				
+		
+		
+MATRIX HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame and the "mode" input field.-->
+		<style>
+			#Type{
+				width: 25%
+			}
+			
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+		}
+		</style>
+				
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html" class="active">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="matrix.png" alt="matrix" id="left">
+			<img src="matrix.png" alt="matrix" id="right">
+			<h1>
+			Calculate The Matrix Properties
+			</h1>
+		</div><!--This is the form that sends data to the python program.-->
+		<form action="/cgi-bin/matrix.py" target="res-iframe" method="post">
+			<input type="text" name="values" placeholder="Enter Elements (eg: 2, 6, -4, 3)" class="input">
+			<input type="text" name="size" placeholder="Enter Size (eg: 2x2)" class="input" width="300">
+			<input type="text" name="mode" placeholder="Enter Mode (eg: det, rref, eigen)" class="input" id="Type">
+			<br>
+			<input type="submit" class="submit" value="Go">
+		</form>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/matrix.py"></iframe>
+		
+EQ HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame.-->
+		<style>
+			#frame{
+				margin-left: 300px;
+				margin-top: 20px;
+				border: 2px solid red;
+				border-radius: 10px;
+				background-color: #eee;
+				width: 60%;
+			}	
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html" class="active">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="lin.jpg" alt="absolute" id="left">
+			<img src="lin.jpg" alt="absolute" id="right">
+			<h1>
+			Solve The System of Equations
+			</h1>
+		</div><!--This is the form that sends data to the python program.-->
+		<form action="/cgi-bin/eq.py" target="res-iframe" method="post">
+			<input type="text" name="system1" placeholder="Enter First Equation: (eg: 2*x + 3*y -5)" class="input">
+			<input type="text" name="system2" placeholder="Enter Second Equation: (Note: Eq = 0)" class="input">
+			<br>
+			<input type="submit" class="submit" value="Go">
+		</form>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/eq.py"></iframe>
+	</body>
+</html>
+	
+TRIG HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame.-->
+		<style>
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html" class="active">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="sin.jfif" alt="absolute" id="left">
+			<img src="sin.jfif" alt="absolute" id="right">
+			<h1>
+			Solve The Trignometry Equation
+			</h1>
+		</div><!--This is the form that sends data to the python program.-->
+		<form action="/cgi-bin/trig.py" target="res-iframe" method="post">
+			<input type="text" name="trigfunc" placeholder="Enter Trigonometric Function, Action (exp/simp): (eg: sin(x)/cos(x), simp)" class="input">
+			<input type="submit" class="submit" value="Go">
+		</form>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/trig.py"></iframe>
+	</body>
+</html>
+	
+DIFF HTML
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame.-->
+		<style>
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html" class="active">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="der.png" alt="absolute" id="left">
+			<img src="der.png" alt="absolute" id="right">
+			<h1>
+			Differentiate The Equation
+			</h1>
+		</div><!--This is the form that sends data to the python program.-->
+		<form action="/cgi-bin/diff.py" target="res-iframe" method="post">
+			<input type="text" name="func" placeholder="Enter Function To Differentiate, Variable of Differentiation, (x-value): " class="input">
+			<input type="submit" class="submit" value="Go">
+		</form>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/diff.py"></iframe>
+	</body>
+</html>
+	
+INT HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame.-->
+		<style>
+			#frame{
+				margin-left: 300px;
+				margin-top: 20px;
+				border: 2px solid red;
+				border-radius: 10px;
+				background-color: #eee;
+				width: 60%;
+
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html" class="active">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="int.png" alt="absolute" id="left">
+			<img src="int.png" alt="absolute" id="right">
+			<h1>
+			Integrate The Equation
+			</h1>
+		</div><!--This is the form that sends data to the python program.-->
+		<form action="/cgi-bin/int.py" target="res-iframe" method="post">
+			<input type="text" name="func" placeholder="Enter Function To Integrate, Variable of Integration, (Lower/Upper Bounds): " class="input">
+			<input type="submit" class="submit" value="Go">
+		</form>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/int.py"></iframe>
+	</body>
+</html>
+	
+DIFF1 HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame.-->
+		<style>
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+			
+			
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html" class="active">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="der.png" alt="absolute" id="left">
+			<img src="der.png" alt="absolute" id="right">
+			<h1>
+			Solve The First Order Differential Equation
+			</h1>
+		</div>
+		<div class="input">
+			<!--This is the form that sends data to the python program.-->
+			<form action="/cgi-bin/diff1.py" target="res-iframe" method="post">
+				<input type="text" name="xval1" class="numberInput">
+				<label><i>y'' + </i></label>
+				<input type="text" name="xval2" class="numberInput">
+				<label><i>y' + </i></label>
+				<input type="text" name="xval3" class="numberInput">
+				<label><i>y = </i></label>
+				<input type="text" name="xval4" class="numberInput">
+				
+
+			  <button type="submit" class="submit">Go</button>
+			</form>		
+		</div>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/diff1.py"></iframe>
+	</body>
+</html>
+	
+SYSDIFF HTML
+
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<style>
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+			
+			
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu">
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html" class="active">Systems of ODE's</a>
+		</div>
+		<div class="headings">
+			<img src="der.png" alt="absolute" id="left">
+			<img src="der.png" alt="absolute" id="right">
+			<h1>
+			Solve The First Order Differential Equation
+			</h1>
+		</div>
+		<div class="input">
+			
+			<form action="/cgi-bin/SysDiff.py" target="res-iframe" method="post">
+				<label><i>x' = </i></label>
+				<input type="text" name="xval1" class="numberInput">
+				<label><i>x + </i></label>
+				<input type="text" name="xval2" class="numberInput">
+				<label><i>y + </i></label>
+				<input type="text" name="xval3" class="numberInput">
+				<label><i>z</i></label>
+				<br><br>
+				
+				<label><i>y' = </i></label>
+				<input type="text" name="yval1" class="numberInput">
+				<label><i>x + </i></label>
+				<input type="text" name="yval2" class="numberInput">
+				<label><i>y + </i></label>
+				<input type="text" name="yval3" class="numberInput">
+				<label><i>z</i></label>
+				<br>
+				
+				<label><i>z' = </i></label>
+				<input type="text" name="zval1" class="numberInput">
+				<label><i>x + </i></label>
+				<input type="text" name="zval2" class="numberInput">
+				<label><i>y + </i></label>
+				<input type="text" name="zval3" class="numberInput">
+				<label><i>z</i></label>
+				
+
+			  <button type="submit" class="submit">Go</button>
+			</form>		
+		</div>
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/SysDiff.py"></iframe>
+	</body>
+</html>
+	
+
+
+
+
+
+
+
+START OF PYTHON
+
+
+
+
+
+
+
+
+POLY PYTHON
+
+#Poly.py
+#Sameer Komoravolu
+#5.13.2020
+
+#Imports the Sympy library and cgi
+import cgi
+from sympy import *
+from mprinter import *
+
+
+#Creates a symbol x
+x = Symbol('x')
+
+#Takes an input from the html page and either finds the zeroes, or with two arguments,
+#finds the value of the function.
+def calculate(userfunc):
+
+    function = userfunc.split(",")
+
+    #If the length is 1, finds zeroes
+    if len(function) == 1:
+        rv = solve(function[0], x)
+        length = len(rv)
+        
+        #Converts the type to float
+        #for i in range(length):
+            #rv[i] = N(rv[i])
+
+    #If the length is 2, substitutes a value for x
+    elif len(function) == 2:
+        rv = function[0].subs(x, function[1])
+    
+    return (rv)
+
+
+
+# process input from form
+form = cgi.FieldStorage()
+userfunc = form["userinput"].value
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+print()
+
+#For special chars
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+"""
+#Returns rv to html
+print(htmlHdr)#blank line, headers
+
+rv = calculate(userfunc)
+mprint (rv)
+
+MATRIX PYTHON
+
+#matrix.py
+#Sameer Komoravolu
+#5.13.2020
+
+#Imports the Sympy library and cgi, creates x
+import cgi
+from sympy import *
+from mprinter import *
+
+x = Symbol('x')
+
+#Calculates properties of matrix, depending on mode:
+#If the user enters det, the determinant is calculated
+#for eigen, the eigenvalues, eigenvectors and algebraic multiplicity are given
+#for rref, returns reduced row-echelon form
+def calculate(M, mode):
+    if mode == "det":
+        rv = M.det()
+
+    elif mode == "eigen":
+        rv = M.eigenvects()
+
+    elif mode == "rref":
+        rv = M.rref()
+
+    return rv
+
+# process input from form
+form = cgi.FieldStorage()
+nums = form["values"].value
+size = form["size"].value
+mode = form["mode"].value
+
+#creates a list for the size of the matrix, determines the rows and columns
+values = nums.split(",")
+sizeList = size.split("x")
+rows = int(sizeList[0])
+columns = int(sizeList[1])
+
+#creates a sympy-based matrix using a double for-loop
+mat = []
+for i in range(columns):
+    row = []
+    for j in range(rows):
+        row.append(values[i*columns+j])
+    mat.append(row)
+        
+M = Matrix(mat)
+
+print(M)
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+
+#For special chars
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+"""
+
+#Returns rv to html
+print(htmlHdr)# blank line, end of headers
+
+rv = calculate(M, mode)
+mprint(rv)
+#print ("<b>"+rv+"</b><p>")
+
+EQ PYTHON
+
+#eq.py
+#Sameer Komoravolu
+#5.13.2020
+
+#Imports the Sympy library and cgi, creates x, y
+import cgi
+from sympy import *
+from mprinter import *
+
+x = Symbol('x')
+y = Symbol('y')
+
+# process input from form
+form = cgi.FieldStorage()
+systems = [form["system1"].value, form["system2"].value]
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+print()                             # blank line
+
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+"""
+
+#Prints answer
+def solve():
+    return (solve_poly_system(systems, x, y))
+
+rv = solve()
+print(rv)
+
+TRIG PYTHON
+
+#trig.py
+#Sameer Komoravolu
+#5.13.2020
+
+#Imports the Sympy library and cgi, creates x, y
+import cgi
+from sympy import *
+from mprinter import *
+from sympy.parsing.sympy_parser import parse_expr
+x = Symbol('x')
+y = Symbol('y')
+
+#Takes in two parameters, function and mode. If exp, expands the expression.
+#Otherwise, simplifies.
+def calculate(trigfunc):
+
+    function = trigfunc.split(", ")
+    function[0] = parse_expr(function[0])
+    if function[1] == "exp":
+        function[0] = expand_trig(function[0])
+
+    elif function[1] == "simp":
+        function[0] = simplify(function[0])
+
+    rv = function[0]
+    return rv
+
+
+# process input from form
+form = cgi.FieldStorage()
+trigfunc = form["trigfunc"].value
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+"""
+print(htmlHdr)                             # blank line, end of headers
+print()
+
+#Prints answer
+rv = calculate(trigfunc)
+mprint(rv)
+
+DIFF PYTHON
+
+#diff.py
+#Sameer Komoravolu
+#5.13.2020
+
+#Imports the Sympy library and cgi, creates x, y, z
+import cgi
+from sympy import *
+from mprinter import *
+from sympy.parsing.sympy_parser import parse_expr
+x = Symbol('x')
+y = Symbol('y')
+z = Symbol('z')
+
+#Takes a function and variable to differentiate with. If a number is provided,
+#the slope of the function at the point is returned. Else, it differentiates the function.
+def calculate(func):
+
+    function = func.split(", ")
+
+    if len(function) == 2:
+        var_diff = function[1]
+        rv = diff(function[0], var_diff)
+
+    elif len(function) == 3:
+        var_diff = function[1]
+        derivative = diff(function[0], var_diff)
+        rv = derivative.subs(x, function[2])
+    
+    return (rv)
+
+# process input from form
+form = cgi.FieldStorage()
+func = form["func"].value
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+"""
+print(htmlHdr)                             # blank line, end of headers
+
+#Prints the answer
+rv = calculate(func)
+mprint (rv)
+
+
+
+
+INT PYTHON
+
+#int.py
+#Sameer Komoravolu
+#5.13.2020
+
+#Imports the Sympy library and cgi, creates x, y, z
+import cgi
+from sympy import *
+from sympy.parsing.sympy_parser import parse_expr
+from mprinter import *
+
+x = Symbol('x')
+y = Symbol('y')
+z = Symbol('z')
+
+#Takes a function and variable to integrate with. If numbers are provided,
+#the area of the function is returned. Else, it integrates the function.
+def calculate(func):
+
+    function = func.split(", ")
+    function[1] = Symbol(function[1])
+
+    if len(function) == 2:
+        var_int = function[1]
+        rv = integrate(function[0], var_int)
+
+    elif len(function) == 4:
+        var_int = function[1]
+        integral = integrate(function[0], var_int)
+        lower = integral.subs(x, function[2])
+        upper = integral.subs(x, function[3])
+        rv = (upper - lower)
+
+    values = [rv, len(function)]
+    
+    return values
+
+# process input from form
+form = cgi.FieldStorage()
+func = form["func"].value
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+"""
+
+print(htmlHdr)                             # blank line, end of headers
+
+#Prints the answer
+values = calculate(func)
+if values[1] == 4:
+    print ("<b>Area = </b>")
+mprint (values[0])
+if values[1] == 2:
+    print ("<b> + c</b>")
+
+DIFF1 PYTHON
+
+#diff1.py
+#Sameer Komoravolu
+#5.13.2020
+
+#Imports the Sympy library and cgi, creates x, y, z
+import cgi
+from sympy import *
+from mprinter import *
+from sympy.parsing.sympy_parser import parse_expr
+x = Symbol('x')
+y = Symbol('y')
+z = Symbol('z')
+
+#Solves the differential equation given by the constants. xval1 y'' + xval2 y' +
+#xval3 y = xval4.
+def calculate(xval1, xval2, xval3, xval4):
+    f = Function('f')(x)
+    diffeq = Eq(xval1*f.diff(x, 2) + xval2*f.diff(x) + xval3*f, xval4)
+    rv = dsolve(diffeq, f)
+    
+    return rv
+
+# process input from form
+form = cgi.FieldStorage()
+xval1 = parse_expr(form["xval1"].value)
+xval2 = parse_expr(form["xval2"].value)
+xval3 = parse_expr(form["xval3"].value)
+xval4 = parse_expr(form["xval4"].value)
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+"""
+
+print(htmlHdr)                             # blank line, end of headers
+
+#Prints the answer.
+rv = expand(calculate(xval1, xval2, xval3, xval4))
+mprint (rv)
+
+
+
+
+SYSDIFF PYTHON
+
+#KomoravoluInt.py
+#Sameer Komoravolu
+#5.9.2020
+#! python3
+
+import cgi
+from mprinter import *
+from sympy import *
+from sympy.parsing.sympy_parser import parse_expr
+x = Symbol('x')
+y = Symbol('y')
+z = Symbol('z')
+t = Symbol('t')
+
+def calculate(xval1, xval2, xval3, yval1, yval2, yval3, zval1, zval2, zval3):
+    x = Function('x')(t)
+    y = Function('y')(t)
+    z = Function('z')(t)
+    diffx = Eq(x.diff(t), xval1*x + xval2*y + xval3*z)
+    diffy = Eq(y.diff(t), yval1*x + yval2*y + yval3*z)
+    diffz = Eq(z.diff(t), zval1*x + zval2*y + zval3*z)
+    system = [diffx, diffy, diffz]
+    rv = dsolve(system, [x, y, z])
+    
+    return rv
+
+# process input from form
+form = cgi.FieldStorage()
+
+xval1 = parse_expr(form["xval1"].value)
+xval2 = parse_expr(form["xval2"].value)
+xval3 = parse_expr(form["xval3"].value)
+
+yval1 = parse_expr(form["yval1"].value)
+yval2 = parse_expr(form["yval2"].value)
+yval3 = parse_expr(form["yval3"].value)
+
+zval1 = parse_expr(form["zval1"].value)
+zval2 = parse_expr(form["zval2"].value)
+zval3 = parse_expr(form["zval3"].value)
+
+
+# HTML response
+print("Content-Type: text/html")    # HTML is following
+htmlHdr = """
+<head>
+   <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+"""
+
+print(htmlHdr)                             # blank line, end of headers
+
+
+rv = calculate(xval1, xval2, xval3, yval1, yval2, yval3, zval1, zval2, zval3)
+mprint (rv)
+
+
+
+
+
+MPRINTER PYTHON
+
+#mprinter.py
+#Sameer Komoravolu
+#5.13.2020
+
+from sympy import latex
+
+# Formats output to include math symbols
+def mprint(rv):
+    print("\[" +latex(rv) + "\]")

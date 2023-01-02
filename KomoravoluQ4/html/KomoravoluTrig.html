@@ -1,0 +1,52 @@
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame.-->
+		<style>
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+		</style>
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html" class="active">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="sin.jfif" alt="absolute" id="left">
+			<img src="sin.jfif" alt="absolute" id="right">
+			<h1>
+			Solve The Trignometry Equation
+			</h1>
+		</div><!--This is the form that sends data to the python program.-->
+		<form action="/cgi-bin/trig.py" target="res-iframe" method="post">
+			<input type="text" name="trigfunc" placeholder="Enter Trigonometric Function, Action (exp/simp): (eg: sin(x)/cos(x), simp)" class="input">
+			<input type="submit" class="submit" value="Go">
+		</form>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/trig.py"></iframe>
+	</body>
+</html>
+	

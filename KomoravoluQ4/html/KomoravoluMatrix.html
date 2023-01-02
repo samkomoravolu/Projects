@@ -1,0 +1,59 @@
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+		<!--Styles the i-frame and the "mode" input field.-->
+		<style>
+			#Type{
+				width: 25%
+			}
+			
+			#frame{
+			margin-left: 300px;
+			margin-top: 20px;
+			border: 2px solid red;
+			border-radius: 10px;
+			background-color: #eee;
+			width: 60%;
+		}
+		</style>
+				
+	</head>
+	
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html">Polynomials</a>
+			<a href="KomoravoluMatrix.html" class="active">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<div class="headings"><!--Creates the heading.-->
+			<img src="matrix.png" alt="matrix" id="left">
+			<img src="matrix.png" alt="matrix" id="right">
+			<h1>
+			Calculate The Matrix Properties
+			</h1>
+		</div><!--This is the form that sends data to the python program.-->
+		<form action="/cgi-bin/matrix.py" target="res-iframe" method="post">
+			<input type="text" name="values" placeholder="Enter Elements (eg: 2, 6, -4, 3)" class="input">
+			<input type="text" name="size" placeholder="Enter Size (eg: 2x2)" class="input" width="300">
+			<input type="text" name="mode" placeholder="Enter Mode (eg: det, rref, eigen)" class="input" id="Type">
+			<br>
+			<input type="submit" class="submit" value="Go">
+		</form>
+			<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/matrix.py"></iframe>
+		

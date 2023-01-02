@@ -1,0 +1,62 @@
+<!--KomoravoluQ4.html-->
+<!--Sameer Komoravolu-->
+<!--5.8.2020-->
+
+<!Doctype html>
+
+<html>
+	<head>
+		<!--Has the diwali lamp favicon and the Q4.css stylesheet.-->
+		<title>KomorCalc</title>
+		<link rel="shorcut icon" type="image/jpg" href="DiwaliLampKomor32.jpg">
+		<link rel="stylesheet" type="text/css" href="Q4.css">
+	<!--Styles the i-frame.-->
+		<style>
+			#frame{
+				margin-left: 300px;
+				margin-top: 20px;
+				border: 2px solid red;
+				border-radius: 10px;
+				background-color: #eee;
+				width: 60%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="vertical-menu"><!--This is the vertical menu, styled in the style sheet.-->
+			<a href="../index.html">Home</a>
+			<a href="KomoravoluPoly.html" class="active">Polynomials</a>
+			<a href="KomoravoluMatrix.html">Matrices</a>
+			<a href="KomoravoluEq.html">Systems of Equations</a>
+			<a href="KomoravoluTrig.html">Trigonometry</a>
+			<a href="KomoravoluDiff.html">Differential Calculus</a>
+			<a href="KomoravoluInt.html">Integral Calculus</a>
+			<a href="KomoravoluDiff1.html">Ordinary Differential Equations</a>
+			<a href="KomoravoluSysDiff.html">Systems of ODE's</a>
+		</div>
+		<!--Creates the heading.-->
+		<div class="headings">
+			<img src="abs.gif" alt="absolute" id="left">
+			<img src="abs.gif" alt="absolute" id="right">
+			<h1>
+			Solve The Polynomial
+			</h1>
+		</div>
+		<form action="/cgi-bin/poly.py" target="res-iframe" method="post">		
+		<!--form action="/cgi-bin/poly.py"  method="post"-->
+			<input type="text" id="userinput" name="userinput" placeholder="Find Values:" class="input">
+			<input type="submit" class="submit" value="Submit">
+			<!--input type="submit" class="submit" id="margin" value="Find a Value"-->
+		</form>
+		
+		<!--This is the i-frame, styled above.-->
+		<iframe id="frame" name="res-iframe" src="/cgi-bin/poly.py"></iframe>
+	
+				
+		<!--iframe height="200" width="400" marginwidth="50" id="frame"
+		name="res-iframe" src="/cgi-bin/poly.py">
+		</iframe-->
+				
+		
+		
+			
